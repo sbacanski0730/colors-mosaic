@@ -1,16 +1,14 @@
 const theme = {
   colors: {
-    elements: {
+    background: {
       primary: "#f9f9f9",
-      secondary: "#1e1e1e",
+    },
+    elements: {
+      border: "#1e1e1e",
     },
     text: {
       primary: "#121212",
-      secondary: "#1e1e1e",
-    },
-    basic: {
-      black: "#000",
-      white: "#fff",
+      secondary: "#8E8E8E",
     },
     button: {
       primary: "#f3f3f3",
@@ -21,9 +19,16 @@ const theme = {
         text: "#089916",
       },
     },
+    navButton: {
+      primary: "#1e1e1e",
+      hover: {
+        underline: "#1e1e1e",
+        background: "rgba(118, 118, 118, 0.15)",
+      },
+    },
   },
   fontSize: {
-    heading: "32px",
+    heading: "24px",
     subtitle: "",
     text: "",
   },
