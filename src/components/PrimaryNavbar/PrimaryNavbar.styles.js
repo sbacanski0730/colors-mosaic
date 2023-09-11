@@ -3,14 +3,14 @@ import styled from "styled-components";
 const StyledPrimaryComponent = styled.div`
   width: 100%;
   height: 60px;
-  background-color: ${({ theme }) => theme.colors.elements.primary};
   border: none;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.text.secondary};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.elements.border};
+  background-color: ${({ theme }) => theme.colors.background.primary};
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--navbar-horizontal-padding);
+  padding-inline: var(--navbar-horizontal-padding);
 
   .logo-container {
     display: flex;
@@ -20,7 +20,13 @@ const StyledPrimaryComponent = styled.div`
 
     p {
       font-size: ${({ theme }) => theme.fontSize.heading};
+      color: ${({ theme }) => theme.colors.text.primary};
       font-weight: 300;
+      user-select: none;
+    }
+
+    svg {
+      height: 35px;
     }
   }
 

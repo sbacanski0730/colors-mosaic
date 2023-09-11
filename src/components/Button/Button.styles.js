@@ -8,7 +8,7 @@ const StyledButton = styled.button`
   border-radius: 5px;
   padding-block: 4px;
   padding-inline: 7px;
-  font-size: 27px;
+  font-size: 21px;
 
   &:hover {
     cursor: pointer;

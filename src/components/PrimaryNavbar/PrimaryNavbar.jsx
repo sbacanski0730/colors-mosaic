@@ -1,12 +1,12 @@
 import React from "react";
-import logo from "../../assets/logo.svg";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
 import StyledPrimaryComponent from "./PrimaryNavbar.styles.js";
 import Button from "../Button/Button.jsx";
 
 const PrimaryNavbar = () => (
   <StyledPrimaryComponent>
     <div className="logo-container">
-      <img src={logo} alt="Apps logo" />
+      <Logo />
       <p>Mosaic</p>
     </div>
     <div className="buttons-container">
