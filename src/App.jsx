@@ -1,12 +1,13 @@
 import React from "react";
-import PrimaryNavbar from "./components/PrimaryNavbar/PrimaryNavbar.jsx";
 import StylesProvider from "./providers/StylesProvider.js";
-import SecondaryNavbar from "./components/SecondaryNavbar/SecondaryNavbar.jsx";
+import MainLayout from "./layouts/MainLayout.jsx";
+import PalettePage from "./pages/PalettePage/PalettePage.jsx";
 
 const App = () => (
   <StylesProvider>
-    <PrimaryNavbar />
-    <SecondaryNavbar />
+    <MainLayout>
+      <PalettePage />
+    </MainLayout>
   </StylesProvider>
 );
 

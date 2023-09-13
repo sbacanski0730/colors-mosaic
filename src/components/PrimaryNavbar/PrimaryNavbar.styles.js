@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const StyledPrimaryComponent = styled.div`
+  position: relative;
   width: 100%;
   height: 60px;
   border: none;
@@ -19,7 +20,7 @@ const StyledPrimaryComponent = styled.div`
     gap: 6px;
 
     p {
-      font-size: ${({ theme }) => theme.fontSize.heading};
+      font-size: ${({ theme }) => theme.fontSize.heading2};
       color: ${({ theme }) => theme.colors.text.primary};
       font-weight: 300;
       user-select: none;
