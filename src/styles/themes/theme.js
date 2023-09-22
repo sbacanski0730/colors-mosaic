@@ -5,6 +5,7 @@ const theme = {
     },
     elements: {
       border: "#1e1e1e",
+      tooltipColor: "#000",
     },
     text: {
       primary: "#121212",
@@ -26,9 +27,11 @@ const theme = {
         background: "rgba(118, 118, 118, 0.15)",
       },
     },
+    backgroundColor: "rgba(197, 197, 197, 0.46)",
   },
   fontSize: {
-    heading: "24px",
+    heading1: "38px",
+    heading2: "24px",
     subtitle: "",
     text: "",
   },
