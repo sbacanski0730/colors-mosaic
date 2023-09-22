@@ -5,6 +5,7 @@ const theme = {
     },
     elements: {
       border: "#1e1e1e",
+      tooltipColor: "#000",
     },
     text: {
       primary: "#121212",
