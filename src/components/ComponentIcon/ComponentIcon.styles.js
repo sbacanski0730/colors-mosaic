@@ -8,16 +8,16 @@ const showTooltip = keyframes`
     opacity: 0;
     transform: translateY(0);
   }
-  /* 80%{
-    transform: translateY(0);
-  } */
+  80%{
+    opacity: 1;
+  }
   100%{
     opacity: 1;
     transform: translateY(-10px);
   }
 `;
 
-const StyledPaletteIcon = styled.div`
+const StyledComponentIcon = styled.div`
   /* background-color: purple; */
 
   position: relative;
@@ -82,4 +82,4 @@ const StyledPaletteIcon = styled.div`
   }
 `;
 
-export default StyledPaletteIcon;
+export default StyledComponentIcon;

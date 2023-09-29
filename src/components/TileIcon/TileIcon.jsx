@@ -1,18 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import StyledPaletteIcon from "./PaletteIcon.styles.js";
+import StyledPaletteIcon from "./TileIcon.style.js";
 
-const PaletteIcon = ({ svgIcon, tooltipLabel }) => (
+const TileIcon = ({ svgIcon, tooltipLabel }) => (
   <StyledPaletteIcon>
     {svgIcon}
     <span id="tooltipLabel">{tooltipLabel}</span>
   </StyledPaletteIcon>
 );
 
-PaletteIcon.propTypes = {
+TileIcon.propTypes = {
   svgIcon: PropTypes.node.isRequired,
   tooltipLabel: PropTypes.string.isRequired,
 };
 
-export default PaletteIcon;
+export default TileIcon;

@@ -31,7 +31,7 @@ const theme = {
   },
   fontSize: {
     heading1: "38px",
-    heading2: "24px",
+    heading2: "22px",
     subtitle: "",
     text: "",
   },

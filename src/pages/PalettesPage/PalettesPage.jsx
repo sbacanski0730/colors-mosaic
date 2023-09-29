@@ -1,6 +1,6 @@
 import React from "react";
 import PaletteComponent from "../../components/PaletteComponent/PaletteComponent.jsx";
-import StyledPalettePage from "./PalettePage.styles.js";
+import StyledPalettePage from "./PalettesPage.styles.js";
 
 const PalettePage = () => (
   <StyledPalettePage>
