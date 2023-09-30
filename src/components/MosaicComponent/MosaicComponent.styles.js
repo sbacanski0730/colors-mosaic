@@ -3,9 +3,9 @@ import styled from "styled-components";
 const StyledMosaicComponent = styled.div`
   background-color: ${(props) => props.bgcolor};
 
-  /* display: flex;
+  display: flex;
 
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
 `;
 export default StyledMosaicComponent;

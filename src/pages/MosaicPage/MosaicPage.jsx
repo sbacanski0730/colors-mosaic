@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import StyledMosaicPage from "./MosaicPage.styles.js";
-import generateColorsArray from "../../helpers/generateColorsArray.js";
-// eslint-disable-next-line no-unused-vars
 import MosaicComponent from "../../components/MosaicComponent/MosaicComponent.jsx";
+import generateColorsArray from "../../helpers/generateColorsArray.js";
 
 const MosaicPage = () => {
   const [colorsArray, setColorsArray] = useState([]);
@@ -14,14 +13,10 @@ const MosaicPage = () => {
   useLayoutEffect(() => {
     setElementWidth(Math.floor(pageRef.current.offsetWidth / 16));
     setElementHeight(Math.floor(pageRef.current.offsetHeight / 8));
-
-    console.log(Math.floor(pageRef.current.offsetWidth / 16));
-    console.log(Math.floor(pageRef.current.offsetHeight / 8));
   }, []);
 
   useEffect(() => {
-    setColorsArray(generateColorsArray(18));
-    console.log(colorsArray);
+    setColorsArray(generateColorsArray(128));
   }, []);
 
   return (
