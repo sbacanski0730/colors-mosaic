@@ -26,7 +26,7 @@ const MosaicPage = () => {
       elementHeight={singleElementHeight}
     >
       {colorsArray.map((item) => (
-        <MosaicComponent bgcolor={item} />
+        <MosaicComponent bgcolor={item} key={item} />
       ))}
     </StyledMosaicPage>
   );

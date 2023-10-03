@@ -6,7 +6,12 @@ import ComponentIcon from "../ComponentIcon/ComponentIcon.jsx";
 
 const MosaicComponent = ({ bgcolor }) => (
   <StyledMosaicComponent bgcolor={bgcolor}>
-    <ComponentIcon svgIcon={<PiEyeLight />} tooltipLabel="Show Color Details" />
+    <div className="icons-container">
+      <ComponentIcon
+        svgIcon={<PiEyeLight />}
+        tooltipLabel="Show Color Details"
+      />
+    </div>
   </StyledMosaicComponent>
 );
 

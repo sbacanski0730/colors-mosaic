@@ -1,10 +1,13 @@
 import React from "react";
 import StylesProvider from "./providers/StylesProvider.js";
 import MainLayout from "./layouts/MainLayout.jsx";
+import MosaicPage from "./pages/MosaicPage/MosaicPage.jsx";
 
 const App = () => (
   <StylesProvider>
-    <MainLayout>{/* <TilesPage /> */}</MainLayout>
+    <MainLayout>
+      <MosaicPage />
+    </MainLayout>
   </StylesProvider>
 );
 
