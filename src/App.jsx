@@ -1,20 +1,14 @@
 import React from "react";
 import StylesProvider from "./providers/StylesProvider.js";
 import MainLayout from "./layouts/MainLayout.jsx";
-import TilesPage from "./pages/TilesPage/TilesPage.jsx";
-
-import generateColorsArray from "./helpers/generateColorsArray.js";
+import MosaicPage from "./pages/MosaicPage/MosaicPage.jsx";
 
 const App = () => (
   <StylesProvider>
     <MainLayout>
-      <TilesPage />
+      <MosaicPage />
     </MainLayout>
   </StylesProvider>
 );
 
 export default App;
-
-window.mocks = {
-  generateColors: generateColorsArray,
-};

@@ -14,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-family: 'Poppins',sans-serif;
         position: relative;
-        /* overflow: hidden; */
+        overflow: hidden;
     }
 
     a,button,input{

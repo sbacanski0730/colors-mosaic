@@ -12,7 +12,11 @@ const ComponentIcon = ({ svgIcon, tooltipLabel }) => (
 
 ComponentIcon.propTypes = {
   svgIcon: PropTypes.node.isRequired,
-  tooltipLabel: PropTypes.string.isRequired,
+  tooltipLabel: PropTypes.string,
+};
+
+ComponentIcon.defaultProps = {
+  tooltipLabel: "_here_tooltip_label_",
 };
 
 export default ComponentIcon;
