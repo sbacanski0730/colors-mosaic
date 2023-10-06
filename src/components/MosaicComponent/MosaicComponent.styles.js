@@ -7,5 +7,15 @@ const StyledMosaicComponent = styled.div`
 
   align-items: center;
   justify-content: center;
+
+  .icons-container {
+    display: none;
+  }
+
+  &:hover {
+    .icons-container {
+      display: flex;
+    }
+  }
 `;
 export default StyledMosaicComponent;

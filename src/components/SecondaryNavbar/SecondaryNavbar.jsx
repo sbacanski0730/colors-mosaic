@@ -8,12 +8,9 @@ const SecondaryNavbar = () => (
     <p>Press space to generate new colors</p>
     <div className="buttons-container">
       <div className="links-container">
-        {/* <a href="/">Mosaic</a> */}
-        {/* <a href="/">Tiles</a> */}
-        {/* <a href="/">Palette</a> */}
-        <NavButton location="/" label="Mosaic" />
-        <NavButton location="/" label="Tiles" />
-        <NavButton location="/" label="Palette" />
+        <NavButton location="/mosaic" label="Mosaic" />
+        <NavButton location="/tiles" label="Tiles" />
+        <NavButton location="/palette" label="Palette" />
       </div>
       <span />
       <MenuIcon />

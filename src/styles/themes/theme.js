@@ -24,7 +24,7 @@ const theme = {
       primary: "#1e1e1e",
       hover: {
         underline: "#1e1e1e",
-        background: "rgba(118, 118, 118, 0.15)",
+        background: "rgba(118, 118, 118, 0.05)",
       },
     },
     backgroundColor: "rgba(197, 197, 197, 0.46)",
