@@ -1,8 +1,11 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const StyledNavButton = styled.a`
-  /* background-color: red; */
-  /* border: 1px solid black; */
+const StyledNavButton = styled(NavLink)`
+  /* border: 1px solid red; */
+
+  user-select: none;
+  position: relative;
 
   min-width: 100px;
   color: ${({ theme }) => theme.colors.navButton.primary};
@@ -15,31 +18,23 @@ const StyledNavButton = styled.a`
   padding-inline: 12px;
   text-align: center;
 
-  /* Hover Animation 1 */
-  /*
-  position: relative;
-  overflow: hidden;
-
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: ${({ theme }) => theme.colors.navButton.hover.underline};
-    transform: translateY(-4px);
-    transform: translateX(-100%);
-    transition: transform 200ms ease-in;
-  }
-
-  &:hover:after {
-    transform: translateX(0);
-  } */
-
-  /* Hover Animation 2 */
   &:hover {
     background-color: ${({ theme }) => theme.colors.navButton.hover.background};
+  }
+
+  &.active {
+    &:after {
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: black;
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+
+      transform: translateY(-4px) scaleX(85%);
+    }
   }
 `;
 export default StyledNavButton;

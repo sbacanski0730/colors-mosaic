@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import StyledNavButton from "./NavButton.style.js";
 
 const NavButton = ({ location, label }) => (
-  <StyledNavButton href={location} data-testid="nav">
+  <StyledNavButton to={location} data-testid="nav">
     {label}
   </StyledNavButton>
 );

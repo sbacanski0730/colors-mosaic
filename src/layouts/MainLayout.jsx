@@ -1,6 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
+import { Outlet } from "react-router-dom";
 import PrimaryNavbar from "../components/PrimaryNavbar/PrimaryNavbar.jsx";
 import SecondaryNavbar from "../components/SecondaryNavbar/SecondaryNavbar.jsx";
 
@@ -11,16 +11,12 @@ const StyledMainLayout = styled.div`
   flex-direction: column;
 `;
 
-const MainLayout = ({ children }) => (
+const MainLayout = () => (
   <StyledMainLayout>
     <PrimaryNavbar />
     <SecondaryNavbar />
-    {children}
+    <Outlet />
   </StyledMainLayout>
 );
-
-MainLayout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default MainLayout;
