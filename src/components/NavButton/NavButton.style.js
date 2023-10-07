@@ -2,8 +2,6 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledNavButton = styled(NavLink)`
-  /* border: 1px solid red; */
-
   user-select: none;
   position: relative;
 
