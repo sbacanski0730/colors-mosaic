@@ -1,16 +1,39 @@
-import React from "react";
-import PaletteComponent from "../../components/PaletteComponent/PaletteComponent.jsx";
+import React, { useContext, useEffect } from "react";
 import StyledPalettePage from "./PalettesPage.styles.js";
 
-const PalettePage = () => (
-  <StyledPalettePage>
-    <PaletteComponent bgColor="#45ab45" />
-    <PaletteComponent bgColor="#00abaa" />
-    <PaletteComponent bgColor="#154599" />
-    <PaletteComponent bgColor="#150099" />
-    <PaletteComponent bgColor="#159500" />
-    <PaletteComponent bgColor="#159555" />
-  </StyledPalettePage>
-);
+import PaletteComponent from "../../components/PaletteComponent/PaletteComponent.jsx";
+
+import ColorsContext from "../../contexts/ColorsContext.jsx";
+
+const PalettePage = () => {
+  const { colorsCollections, generateNewColorsForCollection } =
+    useContext(ColorsContext);
+
+  const generateNewColorsSet = React.useCallback(
+    (e) => {
+      if (e.key === " ") {
+        generateNewColorsForCollection(
+          "paletteColors",
+          colorsCollections.paletteColors.length,
+        );
+      }
+    },
+    [colorsCollections.paletteColors],
+  );
+
+  useEffect(() => {
+    document.addEventListener("keydown", generateNewColorsSet);
+
+    return () => document.removeEventListener("keydown", generateNewColorsSet);
+  }, []);
+
+  return (
+    <StyledPalettePage>
+      {colorsCollections.paletteColors.map((item) => (
+        <PaletteComponent bgColor={item} key={item} />
+      ))}
+    </StyledPalettePage>
+  );
+};
 
 export default PalettePage;

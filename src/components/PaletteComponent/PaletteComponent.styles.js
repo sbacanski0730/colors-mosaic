@@ -19,13 +19,10 @@ const StyledPaletteComponent = styled.div`
   }
 
   .icons-container {
-    /* border: 1px solid red; */
-
     margin-bottom: 30px;
 
-    /* display: none; */
+    display: none;
 
-    display: flex;
     flex-direction: column;
     row-gap: 20px;
   }
