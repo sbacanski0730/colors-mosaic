@@ -13,6 +13,7 @@ import MainLayout from "./layouts/MainLayout.jsx";
 import PalettePage from "./pages/PalettesPage/PalettesPage.jsx";
 import TilesPage from "./pages/TilesPage/TilesPage.jsx";
 import MosaicPage from "./pages/MosaicPage/MosaicPage.jsx";
+import ColorsContextProvider from "./providers/ColorsProvider.jsx";
 
 const applicationRouter = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +28,9 @@ const applicationRouter = createBrowserRouter(
 
 const App = () => (
   <StylesProvider>
-    <RouterProvider router={applicationRouter} />
+    <ColorsContextProvider>
+      <RouterProvider router={applicationRouter} />
+    </ColorsContextProvider>
   </StylesProvider>
 );
 

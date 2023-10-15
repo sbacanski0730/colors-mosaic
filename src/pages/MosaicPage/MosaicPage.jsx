@@ -1,11 +1,21 @@
-import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
+import React, {
+  useState,
+  useRef,
+  useLayoutEffect,
+  useContext,
+  useEffect,
+  useCallback,
+} from "react";
 import StyledMosaicPage from "./MosaicPage.styles.js";
+
 import MosaicComponent from "../../components/MosaicComponent/MosaicComponent.jsx";
-import generateColorsArray from "../../helpers/generateColorsArray.js";
+
+import ColorsContext from "../../contexts/ColorsContext.jsx";
 
 const MosaicPage = () => {
-  const [colorsArray, setColorsArray] = useState([]);
   const pageRef = useRef(null);
+  const { colorsCollections, generateNewColorsForCollection } =
+    useContext(ColorsContext);
 
   const [singleElementWidth, setElementWidth] = useState(0);
   const [singleElementHeight, setElementHeight] = useState(0);
@@ -15,8 +25,21 @@ const MosaicPage = () => {
     setElementHeight(Math.floor(pageRef.current.offsetHeight / 8));
   }, []);
 
+  const generateNewColorsSet = useCallback(
+    (e) => {
+      if (e.key === " ") {
+        generateNewColorsForCollection(
+          "mosaicColors",
+          colorsCollections.mosaicColors.length,
+        );
+      }
+    },
+    [colorsCollections.mosaicColors],
+  );
+
   useEffect(() => {
-    setColorsArray(generateColorsArray(128));
+    document.addEventListener("keydown", generateNewColorsSet);
+    return () => document.removeEventListener("keydown", generateNewColorsSet);
   }, []);
 
   return (
@@ -25,7 +48,7 @@ const MosaicPage = () => {
       elementWidth={singleElementWidth}
       elementHeight={singleElementHeight}
     >
-      {colorsArray.map((item) => (
+      {colorsCollections.mosaicColors.map((item) => (
         <MosaicComponent bgcolor={item} key={item} />
       ))}
     </StyledMosaicPage>

@@ -1,11 +1,21 @@
-import React, { useEffect, useState, useLayoutEffect, useRef } from "react";
+import React, {
+  useEffect,
+  useState,
+  useLayoutEffect,
+  useRef,
+  useContext,
+} from "react";
 import StyledTilesPage from "./TilesPage.styles.js";
+
 import TileComponent from "../../components/TileComponent/TileComponent.jsx";
-import generateColorsArray from "../../helpers/generateColorsArray.js";
+
+import ColorsContext from "../../contexts/ColorsContext.jsx";
 
 const TilesPage = () => {
   const pageRef = useRef(null);
-  const [tilesColors, setTilesColors] = useState([]);
+  const { colorsCollections, generateNewColorsForCollection } =
+    useContext(ColorsContext);
+
   const [singleTileWidth, setTileWidth] = useState(0);
   const [singleTileHeight, setTileHeight] = useState(0);
 
@@ -14,9 +24,22 @@ const TilesPage = () => {
     setTileHeight(Math.floor(pageRef.current.offsetHeight / 4));
   }, []);
 
+  const generateNewColorsSet = React.useCallback(
+    (e) => {
+      if (e.key === " ") {
+        generateNewColorsForCollection(
+          "tilesColors",
+          colorsCollections.tilesColors.length,
+        );
+      }
+    },
+    [colorsCollections.tilesColors],
+  );
+
   useEffect(() => {
-    const colors = generateColorsArray(32);
-    setTilesColors(colors);
+    document.addEventListener("keydown", generateNewColorsSet);
+
+    return () => document.removeEventListener("keydown", generateNewColorsSet);
   }, []);
 
   return (
@@ -25,10 +48,7 @@ const TilesPage = () => {
       tileWidth={singleTileWidth}
       tileHeight={singleTileHeight}
     >
-      {
-        // TODO: normaly this is not how colors will be generated
-      }
-      {tilesColors.map((item) => (
+      {colorsCollections.tilesColors.map((item) => (
         <TileComponent bgColor={item} key={item} />
       ))}
     </StyledTilesPage>

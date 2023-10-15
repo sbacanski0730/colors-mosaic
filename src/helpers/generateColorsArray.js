@@ -10,6 +10,7 @@ const generateColorsArray = (arrayLength) => {
     }
     colorsArray.push(newColor);
   }
+
   return colorsArray;
 };
 export default generateColorsArray;
