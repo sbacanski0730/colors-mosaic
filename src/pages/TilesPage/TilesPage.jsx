@@ -1,20 +1,13 @@
-import React, {
-  useEffect,
-  useState,
-  useLayoutEffect,
-  useRef,
-  useContext,
-} from "react";
+import React, { useEffect, useState, useLayoutEffect, useRef } from "react";
 import StyledTilesPage from "./TilesPage.styles.js";
 
 import TileComponent from "../../components/TileComponent/TileComponent.jsx";
 
-import ColorsContext from "../../contexts/ColorsContext.jsx";
+import useColors from "../../hooks/useColors.js";
 
 const TilesPage = () => {
   const pageRef = useRef(null);
-  const { colorsCollections, generateNewColorsForCollection } =
-    useContext(ColorsContext);
+  const { colorsCollections, generateNewColorsForCollection } = useColors();
 
   const [singleTileWidth, setTileWidth] = useState(0);
   const [singleTileHeight, setTileHeight] = useState(0);

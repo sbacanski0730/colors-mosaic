@@ -8,12 +8,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import StylesProvider from "./providers/StylesProvider.js";
 import MainLayout from "./layouts/MainLayout.jsx";
 import PalettePage from "./pages/PalettesPage/PalettesPage.jsx";
 import TilesPage from "./pages/TilesPage/TilesPage.jsx";
 import MosaicPage from "./pages/MosaicPage/MosaicPage.jsx";
-import ColorsContextProvider from "./providers/ColorsProvider.jsx";
+
+import AppProvider from "./providers/AppProvider.js";
 
 const applicationRouter = createBrowserRouter(
   createRoutesFromElements(
@@ -27,11 +27,9 @@ const applicationRouter = createBrowserRouter(
 );
 
 const App = () => (
-  <StylesProvider>
-    <ColorsContextProvider>
-      <RouterProvider router={applicationRouter} />
-    </ColorsContextProvider>
-  </StylesProvider>
+  <AppProvider>
+    <RouterProvider router={applicationRouter} />
+  </AppProvider>
 );
 
 export default App;

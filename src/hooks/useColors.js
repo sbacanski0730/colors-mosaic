@@ -1,9 +1,10 @@
-import React, { useMemo, useState } from "react";
+import React, { createContext, useContext, useMemo, useState } from "react";
 import PropTypes from "prop-types";
 import generateColorsArray from "../helpers/generateColorsArray.js";
-import ColorsContext from "../contexts/ColorsContext.jsx";
 
-const ColorsProvider = ({ children }) => {
+export const ColorsContext = createContext({});
+
+export const ColorsProvider = ({ children }) => {
   const [colorsCollections, setColorsCollections] = useState({
     paletteColors: generateColorsArray(6),
     tilesColors: generateColorsArray(32),
@@ -26,7 +27,6 @@ const ColorsProvider = ({ children }) => {
       generateColorsArray,
     ],
   );
-
   return (
     <ColorsContext.Provider
       value={
@@ -44,4 +44,12 @@ ColorsProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default ColorsProvider;
+const useColors = () => {
+  const colors = useContext(ColorsContext);
+
+  if (!colors) throw new Error("useColors has to be inside ColorsProvider");
+
+  return colors;
+};
+
+export default useColors;

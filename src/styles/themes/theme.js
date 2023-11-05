@@ -30,7 +30,7 @@ const theme = {
     backgroundColor: "rgba(197, 197, 197, 0.46)",
   },
   fontSize: {
-    heading1: "38px",
+    heading1: "32px",
     heading2: "22px",
     subtitle: "",
     text: "",

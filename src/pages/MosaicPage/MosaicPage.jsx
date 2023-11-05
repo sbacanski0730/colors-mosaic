@@ -2,7 +2,6 @@ import React, {
   useState,
   useRef,
   useLayoutEffect,
-  useContext,
   useEffect,
   useCallback,
 } from "react";
@@ -10,12 +9,11 @@ import StyledMosaicPage from "./MosaicPage.styles.js";
 
 import MosaicComponent from "../../components/MosaicComponent/MosaicComponent.jsx";
 
-import ColorsContext from "../../contexts/ColorsContext.jsx";
+import useColors from "../../hooks/useColors.js";
 
 const MosaicPage = () => {
   const pageRef = useRef(null);
-  const { colorsCollections, generateNewColorsForCollection } =
-    useContext(ColorsContext);
+  const { colorsCollections, generateNewColorsForCollection } = useColors();
 
   const [singleElementWidth, setElementWidth] = useState(0);
   const [singleElementHeight, setElementHeight] = useState(0);
