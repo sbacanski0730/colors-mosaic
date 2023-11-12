@@ -5,36 +5,33 @@ import generateColorsArray from "../helpers/generateColorsArray.js";
 export const ColorsContext = createContext({});
 
 export const ColorsProvider = ({ children }) => {
-  const [colorsCollections, setColorsCollections] = useState({
-    paletteColors: generateColorsArray(6),
-    tilesColors: generateColorsArray(32),
-    mosaicColors: generateColorsArray(128),
-  });
+  const [paletteColors, setPaletteColors] = useState(generateColorsArray(6));
+  const [tilesColors, setTilesColors] = useState(generateColorsArray(32));
+  const [mosaicColors, setMosaicColors] = useState(generateColorsArray(128));
 
-  const generateNewColorsForCollection = (collectionName, n) => {
-    setColorsCollections({
-      ...colorsCollections,
-      [collectionName]: generateColorsArray(n),
-    });
+  const generatePaletteColors = (arrayLength) => {
+    setPaletteColors(generateColorsArray(arrayLength));
+  };
+  const generateTilesColors = (arrayLength) => {
+    setTilesColors(generateColorsArray(arrayLength));
+  };
+  const generateMosaicColors = (arrayLength) => {
+    setMosaicColors(generateColorsArray(arrayLength));
   };
 
-  const contextValue = useMemo(
-    () => ({ colorsCollections, generateNewColorsForCollection }),
-    [
-      colorsCollections.paletteColors,
-      colorsCollections.tilesColors,
-      colorsCollections.mosaicColors,
-      generateColorsArray,
-    ],
+  const hookValuesAndFunctions = useMemo(
+    () => ({
+      paletteColors,
+      tilesColors,
+      mosaicColors,
+      generatePaletteColors,
+      generateTilesColors,
+      generateMosaicColors,
+    }),
+    [paletteColors, tilesColors, mosaicColors, generateColorsArray],
   );
   return (
-    <ColorsContext.Provider
-      value={
-        // colorsCollections,
-        // generateNewColorsForCollection,
-        contextValue
-      }
-    >
+    <ColorsContext.Provider value={hookValuesAndFunctions}>
       {children}
     </ColorsContext.Provider>
   );

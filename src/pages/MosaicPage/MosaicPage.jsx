@@ -13,7 +13,8 @@ import useColors from "../../hooks/useColors.js";
 
 const MosaicPage = () => {
   const pageRef = useRef(null);
-  const { colorsCollections, generateNewColorsForCollection } = useColors();
+
+  const { mosaicColors, generateMosaicColors } = useColors();
 
   const [singleElementWidth, setElementWidth] = useState(0);
   const [singleElementHeight, setElementHeight] = useState(0);
@@ -26,13 +27,10 @@ const MosaicPage = () => {
   const generateNewColorsSet = useCallback(
     (e) => {
       if (e.key === " ") {
-        generateNewColorsForCollection(
-          "mosaicColors",
-          colorsCollections.mosaicColors.length,
-        );
+        generateMosaicColors(mosaicColors.length);
       }
     },
-    [colorsCollections.mosaicColors],
+    [mosaicColors],
   );
 
   useEffect(() => {
@@ -46,7 +44,7 @@ const MosaicPage = () => {
       elementWidth={singleElementWidth}
       elementHeight={singleElementHeight}
     >
-      {colorsCollections.mosaicColors.map((item) => (
+      {mosaicColors.map((item) => (
         <MosaicComponent bgcolor={item} key={item} />
       ))}
     </StyledMosaicPage>

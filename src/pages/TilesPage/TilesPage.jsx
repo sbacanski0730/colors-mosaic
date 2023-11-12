@@ -7,7 +7,8 @@ import useColors from "../../hooks/useColors.js";
 
 const TilesPage = () => {
   const pageRef = useRef(null);
-  const { colorsCollections, generateNewColorsForCollection } = useColors();
+
+  const { tilesColors, generateTilesColors } = useColors();
 
   const [singleTileWidth, setTileWidth] = useState(0);
   const [singleTileHeight, setTileHeight] = useState(0);
@@ -20,13 +21,10 @@ const TilesPage = () => {
   const generateNewColorsSet = React.useCallback(
     (e) => {
       if (e.key === " ") {
-        generateNewColorsForCollection(
-          "tilesColors",
-          colorsCollections.tilesColors.length,
-        );
+        generateTilesColors(tilesColors.length);
       }
     },
-    [colorsCollections.tilesColors],
+    [tilesColors],
   );
 
   useEffect(() => {
@@ -41,7 +39,7 @@ const TilesPage = () => {
       tileWidth={singleTileWidth}
       tileHeight={singleTileHeight}
     >
-      {colorsCollections.tilesColors.map((item) => (
+      {tilesColors.map((item) => (
         <TileComponent bgColor={item} key={item} />
       ))}
     </StyledTilesPage>
