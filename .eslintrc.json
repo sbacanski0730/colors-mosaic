@@ -21,6 +21,12 @@
     ],
     "arrow-body-style": ["error", "as-needed"],
     "react/prop-types": 2,
-    "no-plusplus": 0
+    "no-plusplus": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ]
   }
 }
