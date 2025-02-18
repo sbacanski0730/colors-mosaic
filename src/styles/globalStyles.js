@@ -13,6 +13,8 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: 'Poppins',sans-serif;
+        position: relative;
+        overflow: hidden;
     }
 
     a,button,input{
