@@ -2,7 +2,6 @@
 >:exclamation: Attention. Project still in development. Not all features are introduced.
 
 # About the project and its developer
-I'm developing this project as a proof to my skills in Web Development. 
 The idea for this project arose from the need for a tool that would enable easy search for colors in web design, which can be used as colors for fonts, logos, texts and backgrounds.
 It has already occurred to me that when creating a project, the most difficult thing for me is finding and matching colors to the project. For this reason, I started looking for tools that would make it easier for me, and that's when I realized that I could try to create such a tool myself.
 
